@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-2</title>
+</head>
+<body>
+    
+    <script>
+        // Создайте объект Animal со свойством name и методом eat(), который
+        // выводит сообщение о том, что животное ест. Создайте объект Dog со
+        // свойством name и методом bark(), который выводит сообщение о
+        // том, что собака лает. Используйте одалживание метода eat() из
+        // объекта Animal для объекта Dog, чтобы вывести сообщение о том,
+        // что собака ест.
+        // // Одалживание метода eat() из объекта Animal к объекту Dog
+        // Dog.eat = Animal.eat;
+        // Dog.eat(); // Вывод: Rex is eating.
+
+
+        const Animal = {
+            name: "Animal",
+            eat() {
+                console.log(`${this.name} is eating`);
+            }
+        }
+
+        const Dog = {
+            name: "Rex",
+            bark() {
+                console.log(`${this.name} is barking`);
+            },
+            //this.eat() = Animal.eat();
+        }
+
+        Dog.eat = Animal.eat;
+
+        Animal.eat();
+        Dog.bark();
+        Dog.eat();
+    </script>
+</body>
+</html>
