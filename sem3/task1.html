@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // Напишите функцию getPrototypeChain(obj), которая будет
+        // возвращать цепочку прототипов для заданного объекта
+        // obj. Функция должна вернуть массив прототипов, начиная
+        // от самого объекта и заканчивая глобальным объектом
+        // Object.prototype.
+
+
+
+        const animal = {
+            name: 'ani1',
+            eats: true,
+            walk() {
+                alert("Animal walk");
+            }
+            };
+
+        const rabbit = {
+            name: 'ani2',
+            jumps: true,
+             __proto__: animal
+            };
+        //Object.getPrototypeOf(rabbit, animal);
+
+        const longEar = {
+            name: 'ani3',
+            earLength: 10,
+            __proto__: rabbit
+            };
+        //Object.getPrototypeOf(longEar, rabbit);
+
+        function getPrototypeChain(obj) {
+            let arr = [];
+            let currentObj = obj;
+            while(currentObj !== null) {
+                arr.push(currentObj);
+                currentObj = Object.getPrototypeOf(currentObj);
+            }
+            return arr;
+        } 
+        //const obj = {};
+        const prototypeChain = getPrototypeChain(longEar);
+        console.log(prototypeChain);
+    </script>
+</body>
+</html>
