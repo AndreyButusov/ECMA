@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задача 5</title>
+</head>
+<body>
+    <button>Сортировка по имени</button>
+    
+    <script>
+        // Вы разрабатываете простой веб-интерфейс для отображения списка
+        // пользователей с сервера и возможности сортировки этих пользователей по
+        // имени. У вас уже есть функциональность для получения списка пользователей
+        // с сервера и отображения их в виде списка на странице.
+        // Ваша задача - реализовать сортировку пользователей по имени и добавить
+        // кнопку, при нажатии на которую список пользователей будет автоматически
+        // сортироваться по имени.
+
+        
+        // моя реализация
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                const clickButton = document.querySelector('button');
+                clickButton.addEventListener('click', function () {
+                    console.log(data.sort(function(a, b) {
+                        if (a.name < b.name) {
+                            return -1;
+                        }
+                        if (a.name > b.name) {
+                            return 1;
+                        }
+                        // если имена равны
+                        return 0;
+                    }));
+                });
+                
+                //console.log(data[0].name);
+            })
+            .catch((err) => {
+                console.error('Много ошибок, решай вопросы');
+            });
+        
+
+            
+    </script>
+</body>
+</html>

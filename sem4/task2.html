@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задача 2</title>
+</head>
+<body>
+    
+    <script>
+        // У вас есть список задач, которые необходимо выполнить в определенном порядке. Каждая
+        // задача должна быть выполнена через определенный промежуток времени, заданный в
+        // миллисекундах. Вам необходимо написать функцию, которая принимает список задач и
+        // интервал времени, а затем выполняет каждую задачу через определенный промежуток
+        // времени.
+        // const tasks = [
+        // { name: 'task 1', time: 1000 },
+        // { name: 'task 2', time: 2000 },
+        // { name: 'task 3', time: 3000 },
+        // { name: 'task 4', time: 4000 },
+        // { name: 'task 5', time: 5000 }
+        // ];
+
+        const tasks = [
+        { name: 'task 1', time: 1000 },
+        { name: 'task 2', time: 2000 },
+        { name: 'task 3', time: 3000 },
+        { name: 'task 4', time: 4000 },
+        { name: 'task 5', time: 5000 }
+        ];
+
+
+        function delayedMessage(tasks, interval) {
+            let delay = 0;
+            for (let i = 0; i < tasks.length; i++) {
+                setTimeout(() => {console.log(tasks[i].name); }, delay);
+                delay += interval;
+            }
+            
+        }
+
+        delayedMessage(tasks, 1000);
+
+    </script>
+</body>
+</html> 
