@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 3</title>
+</head>
+<body>
+
+    <h1 id="title">Домашнее задание</h1>
+    <h2 id="subtitle">Какой-то текст</h2>
+    <p id="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, aperiam saepe perspiciatis quas quasi nulla exercitationem nihil voluptatibus recusandae assumenda veritatis quod numquam, excepturi omnis nisi officia voluptas quia maxime?</p>
+
+    <script>
+        // "Изменение стиля элемента через заданное время"
+        // Реализуйте функцию, которая изменяет стиль элемента с задержкой:
+        // Функция changeStyleDelayed
+        // ● Описание:
+        // ○ Функция принимает идентификатор элемента (id) и время задержки в
+        // миллисекундах (delay).
+        // ○ После истечения времени задержки, функция должна изменить стиль
+        // элемента.
+        // Пример использования функции
+        // changeStyleDelayed('myElement', 2000); // Через 2 секунды изменяет
+        // стиль элемента с id 'myElement'
+
+
+        function changeStyleDelayed(idElement, delay) {
+            const temp = document.getElementById(idElement);
+            setTimeout(() => {temp.style.color = 'blue'}, delay);
+        }
+
+        changeStyleDelayed('text', 2000);
+    </script>
+</body>
+</html>
